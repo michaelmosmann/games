@@ -81,11 +81,11 @@
               <targetDirectory>${project.build.directory}/generated/js/teavm</targetDirectory>
 
               <!-- Main class, containing static void main(String[]) -->
-              <mainClass>de.mosmann.Client</mainClass>
+              <mainClass>de.mosmann.PhaserSample</mainClass>
 
               <!-- Whether TeaVM should produce minified JavaScript. Can reduce JavaScript file size more than
                    two times -->
-              <minifying>true</minifying>
+              <minifying>false</minifying>
 
               <!-- Whether TeaVM should produce debug information for its built-in debugger -->
               <debugInformationGenerated>true</debugInformationGenerated>
@@ -104,5 +104,38 @@
         </executions>
       </plugin>
     </plugins>
+    <pluginManagement>
+    	<plugins>
+    		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+    		<plugin>
+    			<groupId>org.eclipse.m2e</groupId>
+    			<artifactId>lifecycle-mapping</artifactId>
+    			<version>1.0.0</version>
+    			<configuration>
+    				<lifecycleMappingMetadata>
+    					<pluginExecutions>
+    						<pluginExecution>
+    							<pluginExecutionFilter>
+    								<groupId>org.teavm</groupId>
+    								<artifactId>
+    									teavm-maven-plugin
+    								</artifactId>
+    								<versionRange>
+    									[0.5.1,)
+    								</versionRange>
+    								<goals>
+    									<goal>compile</goal>
+    								</goals>
+    							</pluginExecutionFilter>
+    							<action>
+    								<ignore></ignore>
+    							</action>
+    						</pluginExecution>
+    					</pluginExecutions>
+    				</lifecycleMappingMetadata>
+    			</configuration>
+    		</plugin>
+    	</plugins>
+    </pluginManagement>
   </build>
 </project>
