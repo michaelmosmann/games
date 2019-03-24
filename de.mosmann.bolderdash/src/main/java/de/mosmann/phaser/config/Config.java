@@ -72,6 +72,9 @@ public interface Config extends JSObject{
 	
 	@JSProperty("type")
 	PhaserType getType();
+	
+	@JSProperty("physics")
+	void physics(Physics physics);
 
 	@JSProperty("scene")
 	void setScene(SceneConfig config);

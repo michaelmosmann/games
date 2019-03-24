@@ -29,7 +29,7 @@ import de.mosmann.phaser.OnPreload;
  */
 public interface SceneConfig extends JSObject {
 	
-	// replaces this all the time
+	// replaces 'this' all the time
 	@Deprecated()
 	@JSBody(params = { "callback" }, script="this.preload = function() { var that=this; callback(that); };")
 	void setPreload(CallbackWithParameter<OnPreload> callback);
